@@ -2,8 +2,13 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
 
+interface Task {
+    title: string;
+    isCompleted: boolean;
+}
+
 function TaskList() {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState<Task[]>([]);
     const [title, setTitle] = useState("");
 
     useEffect(() => {
